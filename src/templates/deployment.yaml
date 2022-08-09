@@ -29,6 +29,8 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       serviceAccountName: {{ include "change-data-capture.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       initContainers:
         - name: check-for-mongo
           image: {{ .Values.initContainers.checkForMongo.image.repository }}:{{ .Values.initContainers.checkForMongo.image.tag }}
