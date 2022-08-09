@@ -1,4 +1,4 @@
-#Helm chart for access-control
+#Helm chart for change-data-capture
 
 to update/publish:
 
