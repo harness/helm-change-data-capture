@@ -2,8 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 global:
-  loadbalancerURL: "http://test/abc"
-  mongoSSL: false
+  loadbalancerURL: ""
   ha: false
 replicaCount: 1
 maxSurge: 1
@@ -13,14 +12,12 @@ image:
   repository: harness/cdcdata-signed
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "75618"
+  tag: ""
 
 java:
   memory: 2048
 
 appLogLevel: INFO
-
-slackWebhookURL: ""
 
 nameOverride: ""
 fullnameOverride: ""
@@ -48,22 +45,6 @@ securityContext:
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 1000
-
-initContainers:
-  checkForMongo:
-    image:
-      tag: "4.2.19"
-      repository: harness/mongo
-    securityContext:
-      runAsNonRoot: true
-      runAsUser: 999
-  checkForTimescaledb:
-    image:
-      tag: pg13-ts2.6-oss-latest
-      repository: timescale/timescaledb-ha
-    securityContext:
-      runAsNonRoot: true
-      runAsUser: 1000
 
 service:
   type: ClusterIP
