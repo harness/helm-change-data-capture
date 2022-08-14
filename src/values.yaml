@@ -12,7 +12,7 @@ image:
   repository: harness/cdcdata-signed
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "75618"
 
 java:
   memory: 2048
