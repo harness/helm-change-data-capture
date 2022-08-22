@@ -9,7 +9,7 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "change-data-capture.selectorLabels" . | nindent 6 }}  
+      {{- include "change-data-capture.selectorLabels" . | nindent 6 }}
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -60,7 +60,7 @@ spec:
                   name: harness-secrets
                   key: timescaledbPostgresPassword
             - name: TIMESCALEDB_USERNAME
-              value: postgres                           
+              value: postgres
             - name: MONGO_URI
               value: {{ include "harnesscommon.database.mongo" (dict "database" "harness" "context" $) }}
             - name: EVENTS_MONGO_URI
