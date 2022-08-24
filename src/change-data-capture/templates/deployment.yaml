@@ -50,7 +50,7 @@ spec:
         imagePullPolicy: IfNotPresent
         args:
           - "pod"
-          - "-lapp=app.kubernetes.io/name:ng-manager"
+          - "-lapp=ng-manager"
       containers:
         - name: change-data-capture
           image: {{ include "common.images.image" (dict "imageRoot" .Values.image "global" .Values.global) }}
