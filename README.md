@@ -1,1 +1,1 @@
-#Helm chart for change-data-capture
+src/change-data-capture/README.md
