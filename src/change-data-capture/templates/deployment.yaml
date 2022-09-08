@@ -93,7 +93,7 @@ spec:
               name: change-data-capture
           resources:
               {{- toYaml .Values.resources | nindent 12 }}
-        {{- toYaml .Values.probes | nindent 8}}
+          {{- toYaml .Values.probes | nindent 10}}
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
