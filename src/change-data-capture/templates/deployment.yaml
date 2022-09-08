@@ -93,27 +93,7 @@ spec:
               name: change-data-capture
           resources:
               {{- toYaml .Values.resources | nindent 12 }}
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: {{.Values.service.port}}
-            timeoutSeconds: 2
-            periodSeconds: 10
-            failureThreshold: 5
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: {{.Values.service.port}}
-            timeoutSeconds: 2
-            periodSeconds: 10
-            failureThreshold: 5
-          startupProbe:
-            httpGet:
-              path: /health
-              port: {{.Values.service.port}}
-            timeoutSeconds: 2
-            periodSeconds: 10
-            failureThreshold: 25
+        {{- toYaml .Values.probes | nindent 8}}
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
