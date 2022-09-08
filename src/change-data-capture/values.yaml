@@ -73,21 +73,21 @@ probes:
   readinessProbe:
     httpGet:
       path: /health
-      port: {{.Values.service.port}}
+      port: 8190
     timeoutSeconds: 2
     periodSeconds: 10
     failureThreshold: 5
   livenessProbe:
     httpGet:
       path: /health
-      port: {{.Values.service.port}}
+      port: 8190
     timeoutSeconds: 2
     periodSeconds: 10
     failureThreshold: 5
   startupProbe:
     httpGet:
       path: /health
-      port: {{.Values.service.port}}
+      port: 8190
     timeoutSeconds: 2
     periodSeconds: 10
     failureThreshold: 25
