@@ -3,6 +3,20 @@ entries:
   change-data-capture:
   - apiVersion: v2
     appVersion: 0.0.1
+    created: "2022-09-09T16:13:59.845483292Z"
+    dependencies:
+    - name: harness-common
+      repository: https://harness.github.io/helm-common
+      version: 1.x.x
+    description: A Helm chart for Kubernetes
+    digest: 77af54f68d29b7f84d2109aa174c1498ae74e06ea5389d3986845be7e35047e0
+    name: change-data-capture
+    type: application
+    urls:
+    - https://github.com/harness/helm-change-data-capture/releases/download/change-data-capture-0.2.9/change-data-capture-0.2.9.tgz
+    version: 0.2.9
+  - apiVersion: v2
+    appVersion: 0.0.1
     created: "2022-09-01T12:36:36.340228479Z"
     dependencies:
     - name: harness-common
@@ -168,4 +182,4 @@ entries:
     urls:
     - https://github.com/harness/helm-change-data-capture/releases/download/change-data-capture-0.1.1/change-data-capture-0.1.1.tgz
     version: 0.1.1
-generated: "2022-09-01T12:36:36.340274379Z"
+generated: "2022-09-09T16:13:59.847029212Z"
