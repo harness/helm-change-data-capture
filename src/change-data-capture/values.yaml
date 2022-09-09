@@ -69,6 +69,29 @@ securityContext:
   # runAsNonRoot: true
   # runAsUser: 1000
 
+probes:
+  readinessProbe:
+    httpGet:
+      path: /health
+      port: 8190
+    timeoutSeconds: 2
+    periodSeconds: 10
+    failureThreshold: 5
+  livenessProbe:
+    httpGet:
+      path: /health
+      port: 8190
+    timeoutSeconds: 2
+    periodSeconds: 10
+    failureThreshold: 5
+  startupProbe:
+    httpGet:
+      path: /health
+      port: 8190
+    timeoutSeconds: 2
+    periodSeconds: 10
+    failureThreshold: 25
+
 service:
   type: ClusterIP
   port: 8190
